@@ -1,26 +1,29 @@
-Summary:	send CDP packets
-Summary(pl):	wysy³a pakiety CDP
+Summary:	Send CDP packets
+Summary(pl):	Wysy³anie pakietów CDP
 Name:		scdp
 Version:	1.0b
 Release:	1
 License:	GPL
 Group:		Networking
-Source0:	http://dl.sf.net/%{name}/%{name}-%{version}.tar.gz
+Source0:	http://dl.sourceforge.net/scdp/%{name}-%{version}.tar.gz
 # Source0-md5:	7eafaf5a422e37d04715613993ed5d95
 Patch0:		%{name}-automake.patch
 Patch1:		%{name}-libnet1.patch
 URL:		http://www.sf.net/projects/scdp/
+BuildRequires:	autoconf
+BuildRequires:	automake
 BuildRequires:	libnet1-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
-This program sends CDP (Cisco Discovery Protocol) packets out on selected
-interfaces and tells the connected switch where the host is connected.
+This program sends CDP (Cisco Discovery Protocol) packets out on
+selected interfaces and tells the connected switch where the host is
+connected.
 
 %description -l pl
-Ten program wysy³a pakiety CDP (Cisco Discovery Protocol) na wskazanych
-interfejsach sieciowych i informuje przy³±czone switche o miejscu
-pod³±czenia maszyny.
+Ten program wysy³a pakiety CDP (Cisco Discovery Protocol) na
+wskazanych interfejsach sieciowych i informuje przy³±czone switche o
+miejscu pod³±czenia maszyny.
 
 %prep
 %setup -q
