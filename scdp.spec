@@ -2,7 +2,7 @@ Summary:	Send CDP packets
 Summary(pl):	Wysy³anie pakietów CDP
 Name:		scdp
 Version:	1.0b
-Release:	1
+Release:	
 License:	GPL
 Group:		Networking
 Source0:	http://dl.sourceforge.net/scdp/%{name}-%{version}.tar.gz
