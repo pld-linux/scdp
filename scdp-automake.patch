@@ -1,0 +1,11 @@
+diff -Naur scdp-1.0b/acinclude.m4 scdp-1.0b-p/acinclude.m4
+--- scdp-1.0b/acinclude.m4	Tue Mar 20 21:16:48 2001
++++ scdp-1.0b-p/acinclude.m4	Sun Jun  6 12:29:36 2004
+@@ -14,6 +14,6 @@
+   else
+     AC_MSG_ERROR(Needs libnet library. Can be found at http://www.packetfactory.net/libnet)
+   fi
+-  undefine(AC_LIBNET_NAME)dnl
++  undefine([AC_LIBNET_NAME])dnl
+ ])
+ 
