@@ -1,4 +1,4 @@
 #
 # cron job for the scdp package
 #
-* * * * *	root	/usr/bin/scdp
+* * * * *	root	/usr/bin/scdp.cron

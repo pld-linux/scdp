@@ -1,0 +1,7 @@
+# Customized setings for scdp
+
+# Use CDP for which interfaces - space separated:
+# INTERFACES="eth0 eth1"
+
+# Be quiet and don't print any runtime error messages
+# QUIET="YES"
