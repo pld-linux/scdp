@@ -8,11 +8,10 @@ Group:		Networking
 Source0:	http://dl.sourceforge.net/scdp/%{name}-%{version}.tar.gz
 # Source0-md5:	7eafaf5a422e37d04715613993ed5d95
 Patch0:		%{name}-automake.patch
-Patch1:		%{name}-libnet1.patch
 URL:		http://www.sf.net/projects/scdp/
 BuildRequires:	autoconf
 BuildRequires:	automake
-BuildRequires:	libnet1-devel
+BuildRequires:	libnet-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -28,7 +27,6 @@ miejscu pod³±czenia maszyny.
 %prep
 %setup -q
 %patch0 -p1
-%patch1 -p1
 
 %build
 %{__aclocal}
