@@ -1,3 +1,6 @@
+# TODO:
+# - prepare special script that runs from cron and takes arguments from
+#   sysconfig file
 Summary:	Send CDP packets
 Summary(pl):	Wysy³anie pakietów CDP
 Name:		scdp
@@ -7,6 +10,7 @@ License:	GPL
 Group:		Networking
 Source0:	http://dl.sourceforge.net/scdp/%{name}-%{version}.tar.gz
 # Source0-md5:	7eafaf5a422e37d04715613993ed5d95
+Source1:	%{name}.cron
 Patch0:		%{name}-automake.patch
 Patch1:		%{name}-libnet1.patch
 URL:		http://www.sf.net/projects/scdp/
@@ -40,9 +44,12 @@ miejscu pod³±czenia maszyny.
 
 %install
 rm -rf $RPM_BUILD_ROOT
+install -d $RPM_BUILD_ROOT/etc/cron.d
 
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
+
+install %{SOURCE1} $RPM_BUILD_ROOT/etc/cron.d/%{name}
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -50,4 +57,5 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc AUTHORS ChangeLog README
+%attr(640,root,root) %config(noreplace) %verify(not size mtime md5) /etc/cron.d/%{name}
 %attr(755,root,root) %{_bindir}/*
