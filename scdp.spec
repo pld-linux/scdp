@@ -12,7 +12,7 @@ Source2:	%{name}.sysconfig
 Source3:	%{name}.cron.sh
 Patch0:		%{name}-automake.patch
 Patch1:		%{name}-libnet1.patch
-URL:		http://www.sf.net/projects/scdp/
+URL:		http://www.sourceforge.net/projects/scdp/
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	libnet1-devel
