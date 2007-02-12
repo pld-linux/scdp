@@ -1,5 +1,5 @@
 Summary:	Send CDP packets
-Summary(pl):	Wysy³anie pakietów CDP
+Summary(pl.UTF-8):   WysyÅ‚anie pakietÃ³w CDP
 Name:		scdp
 Version:	1.0b
 Release:	4
@@ -23,10 +23,10 @@ This program sends CDP (Cisco Discovery Protocol) packets out on
 selected interfaces and tells the connected switch where the host is
 connected.
 
-%description -l pl
-Ten program wysy³a pakiety CDP (Cisco Discovery Protocol) na
-wskazanych interfejsach sieciowych i informuje przy³±czone switche o
-miejscu pod³±czenia maszyny.
+%description -l pl.UTF-8
+Ten program wysyÅ‚a pakiety CDP (Cisco Discovery Protocol) na
+wskazanych interfejsach sieciowych i informuje przyÅ‚Ä…czone switche o
+miejscu podÅ‚Ä…czenia maszyny.
 
 %prep
 %setup -q
