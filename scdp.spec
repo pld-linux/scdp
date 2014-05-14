@@ -2,10 +2,10 @@ Summary:	Send CDP packets
 Summary(pl.UTF-8):	Wysyłanie pakietów CDP
 Name:		scdp
 Version:	1.0b
-Release:	6
+Release:	7
 License:	GPL
 Group:		Networking
-Source0:	http://dl.sourceforge.net/scdp/%{name}-%{version}.tar.gz
+Source0:	http://downloads.sourceforge.net/scdp/%{name}-%{version}.tar.gz
 # Source0-md5:	7eafaf5a422e37d04715613993ed5d95
 Source1:	%{name}.cron
 Source2:	%{name}.sysconfig
@@ -16,6 +16,7 @@ URL:		http://www.sourceforge.net/projects/scdp/
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	libnet1-devel
+Suggests:	crondaemon
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -44,13 +45,12 @@ miejscu podłączenia maszyny.
 %install
 rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT/etc/{cron.d,sysconfig}
-
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
 
-install %{SOURCE1} $RPM_BUILD_ROOT/etc/cron.d/%{name}
-install %{SOURCE2} $RPM_BUILD_ROOT/etc/sysconfig/%{name}
-install %{SOURCE3} $RPM_BUILD_ROOT%{_bindir}/%{name}.cron
+cp -p %{SOURCE1} $RPM_BUILD_ROOT/etc/cron.d/%{name}
+cp -p %{SOURCE2} $RPM_BUILD_ROOT/etc/sysconfig/%{name}
+install -p %{SOURCE3} $RPM_BUILD_ROOT%{_bindir}/%{name}.cron
 
 %clean
 rm -rf $RPM_BUILD_ROOT
