@@ -2,7 +2,7 @@ Summary:	Send CDP packets
 Summary(pl.UTF-8):	Wysyłanie pakietów CDP
 Name:		scdp
 Version:	1.0b
-Release:	8
+Release:	9
 License:	GPL
 Group:		Networking
 Source0:	http://downloads.sourceforge.net/scdp/%{name}-%{version}.tar.gz
@@ -12,6 +12,7 @@ Source2:	%{name}.sysconfig
 Source3:	%{name}.cron.sh
 Patch0:		%{name}-automake.patch
 Patch1:		%{name}-libnet1.patch
+Patch2:		%{name}-fix-build.patch
 URL:		http://www.sourceforge.net/projects/scdp/
 BuildRequires:	autoconf
 BuildRequires:	automake
@@ -33,6 +34,7 @@ miejscu podłączenia maszyny.
 %setup -q
 %patch -P0 -p1
 %patch -P1 -p1
+%patch -P2 -p1
 
 %build
 %{__aclocal}

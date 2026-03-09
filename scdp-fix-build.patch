@@ -1,0 +1,26 @@
+--- scdp-1.0b.orig/scdp.c	2026-03-09 14:45:47.628729290 +0100
++++ scdp-1.0b/scdp.c	2026-03-09 14:51:31.360937073 +0100
+@@ -1,3 +1,4 @@
++#define _DEFAULT_SOURCE
+ /*
+  * scdp - Send one CDP packet. Use it with a cron job.
+  * Copyright (C) 2001 Mikael Wedlin & Kent Engström, Linköping University.
+@@ -21,6 +22,9 @@
+ #include <stdio.h>
+ #include <conf.h>
+ #include <libnet1.h>
++
++/* libnet_ifaddrlist is available in the library but not declared in headers */
++extern int libnet_ifaddrlist(struct libnet_ifaddr_list **, char *);
+ #include <malloc.h>
+ #include <sys/types.h>
+ #include <sys/wait.h>
+@@ -516,7 +520,7 @@
+ 
+   if (interface == NULL) { /* Try to find open interfaces. */
+     struct sockaddr_in sin;
+-    if (libnet_select_device(&sin, (u_char **)&interface, ebuf) == -1) {
++    if (libnet_select_device(&sin, (char **)&interface, ebuf) == -1) {
+       if (qflag) {
+ 	exit(0);
+       } else {
